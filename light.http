@@ -1,0 +1,14 @@
+POST http://localhost:4080/api/project
+Content-Type: application/json
+{
+    "_id": "623dfcbde50716813c3739be",
+    "projectName": "Inside Bill's Brain",
+    "description": "This depict the illusion of how bill gate's brain ought to look like in the absence of reality.",
+    "industry": "Automobile",
+    "hashTag": "#illusion",
+    "authorName": "Kunta Murphy",
+    "authorImg": "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
+    "likes": 0,
+    "doc": 0,
+    "share": 0,
+}
