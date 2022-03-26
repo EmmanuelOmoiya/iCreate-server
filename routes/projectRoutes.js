@@ -8,8 +8,9 @@ router.post('/',(req, res)=>{
         description : req.body.description,
         industry : req.body.industry,
         hashTag : req.body.hashTag,
-        authorName: req.body.authorImg,
+        authorName: req.body.authorName,
         authorImg: req.body.authorImg,
+        id: req.body.id,
     });
 
     newProject.save()

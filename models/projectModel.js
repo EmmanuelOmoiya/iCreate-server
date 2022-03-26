@@ -11,11 +11,11 @@ const projectModel = mongoose.Schema({
     likes: { type: Number, default: 0 },
     doc: { type: Number, default: 0 },
     share: { type: Number, default: 0 },
+    id : { type: String },
     comments: [
         {type: String},
         {timestamps: true}
     ],
-    id : { type: String },
 },
 {
     timestamps: true
