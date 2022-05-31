@@ -6,6 +6,7 @@ const registerUser = asyncHandler(async (req, res) =>{
     const fullName = req.body.fullName;
     const email = req.body.email;
     const password = req.body.password;
+    const role = req.body.role;
 
     const userExists = await User.findOne({email});
     
@@ -18,7 +19,8 @@ const registerUser = asyncHandler(async (req, res) =>{
     const user = await User.create({
         fullName,
         email,
-        password
+        password,
+        role
     });
 
     if(user){
