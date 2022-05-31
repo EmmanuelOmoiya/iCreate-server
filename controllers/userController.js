@@ -30,6 +30,7 @@ const registerUser = asyncHandler(async (req, res) =>{
             email: user.email,
             password: user.password,
             img: user.img,
+            role: user.role,
             token: generateToken(user._id),
         })
     } else {
