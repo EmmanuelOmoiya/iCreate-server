@@ -5,6 +5,6 @@ const { registerUser, authUser, allUsers } = require('../controllers/userControl
 
 router.route('/').post(registerUser).get(protect,  allUsers);
 router.post('/login', authUser);
-
+router.post('/signin', authUser);
 
 module.exports = router; 
