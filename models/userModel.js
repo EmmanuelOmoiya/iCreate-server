@@ -21,11 +21,31 @@ const userModel = mongoose.Schema({
 }
 );
 
-userModel.methods.matchPassword = async function(enteredPassword){
+const userModeel = {
+    fullName : String,
+    email: String,
+    password: String,
+    address: String ,
+    phoneNumber: String ,
+    role: {
+        type: String
+    },
+    createdAt: {
+        type: Date,
+        default : new Date()
+    },
+     img: {
+        type: String,
+        default:
+            "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
+    },
+}
+
+userModeel.methods.matchPassword = async function(enteredPassword){
     return await bcrypt.compare(enteredPassword, this.password);
 }
   
-userModel.pre('save', async function(next){
+userModeel.pre('save', async function(next){
     if(!this.isModified){
         next()
     }
@@ -34,6 +54,6 @@ userModel.pre('save', async function(next){
     this.password = await bcrypt.hash(this.password, salt)
 })
 
-const User = mongoose.model("User", userModel);
+const User = mongoose.model("User", userModeel);
 
 module.exports = User;
