@@ -5,11 +5,6 @@ const generateToken = require('../config/generateToken');
 const registerUser = asyncHandler(async (req, res) =>{
     const {fullName, email, password} = req.body;
 
-    if(!fullName || !email || !password){
-        res.status(400);
-        throw new Error("Please enable to fill all fields");
-    }
-
     const userExists = await User.findOne({email});
 
     if(userExists){
