@@ -46,6 +46,7 @@ const authUser = (async(req, res)=>{
           fullName: user.fullName,
           email: user.email,
           password: user.password,
+          role: user.role,
           img: user.img,
           token: generateToken(user._id),
     })
