@@ -41,11 +41,11 @@ const userModeel = {
     },
 }
 
-userModeel.methods.matchPassword = async function(enteredPassword){
+userModel.methods.matchPassword = async function(enteredPassword){
     return await bcrypt.compare(enteredPassword, this.password);
 }
   
-userModeel.pre('save', async function(next){
+userModel.pre('save', async function(next){
     if(!this.isModified){
         next()
     }
@@ -54,6 +54,6 @@ userModeel.pre('save', async function(next){
     this.password = await bcrypt.hash(this.password, salt)
 })
 
-const User = mongoose.model("User", userModeel);
+const User = mongoose.model("User", userModel);
 
 module.exports = User;
