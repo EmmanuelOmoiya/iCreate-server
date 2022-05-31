@@ -7,6 +7,9 @@ const userModel = mongoose.Schema({
     password: { type: String, required: true },
     address: { type: String },
     phoneNumber: { type: String },
+    role: {
+        type: String
+    },
     img: {
         type: String,
         default:
