@@ -7,6 +7,7 @@ const registerUser = asyncHandler(async (req, res) =>{
     const email = req.body.email;
     const password = req.body.password;
     const role = req.body.role;
+    const farmName = req.body.farmName;
 
     const userExists = await User.findOne({email});
     
@@ -20,7 +21,8 @@ const registerUser = asyncHandler(async (req, res) =>{
         fullName,
         email,
         password,
-        role
+        role,
+        farmName
     });
 
     if(user){
@@ -31,6 +33,7 @@ const registerUser = asyncHandler(async (req, res) =>{
             password: user.password,
             img: user.img,
             role: user.role,
+            farmName: user.farmName
             token: generateToken(user._id),
         })
     } else {
@@ -49,6 +52,7 @@ const authUser = (async(req, res)=>{
           email: user.email,
           password: user.password,
           role: user.role,
+            farmName: user.farmName,
           img: user.img,
           token: generateToken(user._id),
     })
