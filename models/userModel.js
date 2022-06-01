@@ -5,6 +5,7 @@ const userModel = mongoose.Schema({
     fullName: { type: String, required: true},
     email: { type: String, unique: true , required: true},
     password: { type: String, required: true},
+    farmName: { type: String, required: true},
     address: { type: String },
     phoneNumber: { type: String },
     role: {
@@ -20,26 +21,6 @@ const userModel = mongoose.Schema({
     timestamps: true
 }
 );
-
-const userModeel = {
-    fullName : String,
-    email: String,
-    password: String,
-    address: String ,
-    phoneNumber: String ,
-    role: {
-        type: String
-    },
-    createdAt: {
-        type: Date,
-        default : new Date()
-    },
-     img: {
-        type: String,
-        default:
-            "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
-    },
-}
 
 userModel.methods.matchPassword = async function(enteredPassword){
     return await bcrypt.compare(enteredPassword, this.password);
