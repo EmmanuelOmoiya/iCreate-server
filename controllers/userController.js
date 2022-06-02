@@ -33,7 +33,7 @@ const registerUser = asyncHandler(async (req, res) =>{
             password: user.password,
             img: user.img,
             role: user.role,
-            farmName: user.farmName
+            farmName: user.farmName,
             token: generateToken(user._id),
         })
     } else {
