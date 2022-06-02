@@ -5,7 +5,7 @@ const userModel = mongoose.Schema({
     fullName: { type: String, required: true},
     email: { type: String, unique: true , required: true},
     password: { type: String, required: true},
-    farmName: { type: String, required: true},
+    farmName: { type: String},
     address: { type: String },
     phoneNumber: { type: String },
     role: {
